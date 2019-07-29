@@ -4,7 +4,11 @@ pipeline {
       stage('build') {
          steps {
             sh 'python --version'
+            echo 'this is a test'
          }
+      }
+      stage('validate') {
+         echo 'validated'
       }
    }
 }

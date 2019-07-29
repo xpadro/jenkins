@@ -1,5 +1,8 @@
 pipeline {
    agent { docker { image 'python:3.5.1'}}
+   environment {
+      PROJECT_NAME = "test_project"
+   }
    stages {
       stage('build') {
          steps {
@@ -9,7 +12,7 @@ pipeline {
       }
       stage('validate') {
          steps {
-            echo 'validated'
+            sh "echo validated project $PROJECT_NAME"
          }
       }
    }
